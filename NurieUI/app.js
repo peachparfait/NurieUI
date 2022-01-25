@@ -4,7 +4,8 @@ const app = express();
 const password = require( "./password.json" );
 
 app.use(express.static('public'));
-
+var helmet = require('helmet')
+app.use(helmet())
 const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
