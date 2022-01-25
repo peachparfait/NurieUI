@@ -18,10 +18,34 @@ connection.connect(function(err) {
   console.log('Connected');
 });
 app.get('/', function (req, res) {
-  connection.query('select * from items', function (error, results, fields) {
-    if (error) throw error;
-    res.send(results[0].name);
-  });
+  res.send("TOP");
+});
+app.get('/login', function (req, res) {
+  res.send("ログイン");
+});
+app.get('/signup', function (req, res) {
+  res.send("登録");
+});
+app.get('/forget', function (req, res) {
+  res.send("わすれた");
+});
+app.get('/confirm', function (req, res) {
+  res.send("かくにん");
+});
+app.get('/succeed', function (req, res) {
+  res.send("せいこう");
+});
+app.get('/create', function (req, res) {
+  res.send("つくるページ");
+});
+app.get('/works', function (req, res) {
+  res.send("一覧");
+});
+app.get('/profile', function (req, res) {
+  res.send("プロフィール");
+});
+app.get('/settings', function (req, res) {
+  res.send("設定");
 });
 app.listen(3000);
 
